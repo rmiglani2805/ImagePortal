@@ -7,7 +7,7 @@
   "semanticCommitScope": "deps",
   "automergeType": "pr",
   "prCreation": "immediate",
-  "schedule": [	"daily"],
+  "schedule": [	"every weekday"],
   "dockerfile": {
     "semanticCommitType": "build"
   },
