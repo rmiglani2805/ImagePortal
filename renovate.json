@@ -1,0 +1,45 @@
+{
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "extends": [
+    "config:base"
+  ],
+  "assignees": ["rmiglani2805"],
+  "semanticCommitScope": "deps",
+  "automergeType": "pr",
+  "prCreation": "immediate",
+  "schedule": [	"every 5 min"],
+  "dockerfile": {
+    "semanticCommitType": "build"
+  },
+  "packageRules": [
+    {
+      "matchPackageNames": ["containerbase/node"],
+      "versioning": "node"
+    },
+    {
+      "matchDepTypes": ["dependencies"],
+      "semanticCommitType": "build"
+    },
+    {
+      "matchPackageNames": ["semantic-release"],
+      "semanticCommitType": "build"
+    },
+    {
+      "matchPackageNames": ["@types/jest"],
+      "groupName": "jest monorepo"
+    },
+    {
+      "matchFileNames": ["**/__fixtures__/**"],
+      "enabled": false
+    }
+  ],
+  "regexManagers": [
+    {
+      "fileMatch": ["config/options/index.ts"],
+      "matchStrings": [
+        "default: '(?<depName>ghcr.io/containerbase/sidecar):(?<currentValue>.*)'"
+      ],
+      "datasourceTemplate": "docker"
+    }
+  ]
+}
