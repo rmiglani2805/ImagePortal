@@ -5,6 +5,7 @@
   "semanticCommitScope": "deps",
   "automergeType": "pr",
   "prCreation": "immediate",
+  "schedule": [	"every 5 min"],
   "dockerfile": {
     "semanticCommitType": "build"
   },
